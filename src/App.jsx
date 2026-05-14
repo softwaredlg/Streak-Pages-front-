@@ -1,16 +1,13 @@
-import { useState } from 'react'
-import Footer from './components/footer'
-import Layout from './components/layout'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './views/HomePage'
 import './styles/App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const responsive = `bg-red-500 md:bg-blue-500 lg:bg-green-500`
 
   return (
-    <Layout>
-      <h1 className={responsive}>holaaa meli</h1>
-    </Layout>
+    <Routes>
+      <Route path='/home' element={<HomePage />} />
+    </Routes>
   )
 }
 
