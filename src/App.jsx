@@ -9,7 +9,7 @@ function App() {
 
   return (
     <Layout>
-      <h1 className={responsive}>holaaa</h1>
+      <h1 className={responsive}>holaaa meli</h1>
     </Layout>
   )
 }
