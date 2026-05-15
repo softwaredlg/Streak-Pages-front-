@@ -62,7 +62,7 @@ const HomePage = () => {
                     id="ritualsContainer">
                     <div className="" id="phraseContainer">
                         <div className="flex justify-center mb-4" id="phraseCardContainer">
-                            <RitualCard icon={"foco"} />
+                            <RitualCard icon={"estrella"} />
                         </div>
                         <div className="flex justify-center" id="phraseButtonContainer">
                             <Button
