@@ -14,6 +14,7 @@ const Button = ({ text, route, bgColor, textColor, icon }) => {
             className="
                 min-w-45
                 min-h-10
+                md:text-xl
                 2xl:min-h-12
                 2xl:min-w-50
                 inline-flex

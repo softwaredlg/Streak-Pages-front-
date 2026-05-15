@@ -41,6 +41,7 @@ const Header = () => {
                             font-serif 
                             text-[#5C4A32]
                             text-lg
+                            sm:text-2xl
                             md:text-5xl
                             lg:text-6xl
                             xl:text-7xl 
@@ -54,6 +55,7 @@ const Header = () => {
                         <p className="
                             text-[#6B6058] 
                             text-[0.6rem]
+                            sm:text-base
                             md:text-xl
                             lg:text-2xl
                             xl:text-3xl
