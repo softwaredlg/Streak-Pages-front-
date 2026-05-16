@@ -12,7 +12,9 @@ const HomePage = () => {
                     md:max-w-full
                     md:flex
                     md:flex-col
+                    md:justify-center
                     md:p-5
+                    md:h-134
                     lg:p-6
                     xl:p-8
                     2xl:p-10

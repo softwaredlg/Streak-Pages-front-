@@ -7,18 +7,18 @@ const WelcomePage = () => {
     const responsive = `bg-red-500 sm:bg-blue-300 md:bg-blue-500 lg:bg-green-500 xl:bg-green-300 2xl:bg-green-100`
     return (
         <Layout>
-
             <div className="
                     p-2
-                    md:items-center
-                    md:max-w-full
-                    md:flex
-                    md:flex-col
+                    items-center
+                    flex
+                    flex-col
+                    justify-center
+                    h-134
                     md:p-5
+                    md:h-134
                     lg:p-6
                     xl:p-8
                     2xl:p-10
-                    h-134
                     "
                 id="contentContainer"
             >
@@ -31,9 +31,7 @@ const WelcomePage = () => {
                 >
                     <h1 className="
                             text-[#2C4A5E]
-                            text-2xl
-                            sm:text-3xl
-                            md:text-5xl
+                            text-5xl
                             lg:text-6xl
                             xl:text-6xl
                             2xl:text-7xl
@@ -41,10 +39,11 @@ const WelcomePage = () => {
                     >Ready to start?</h1>
                     <h2 className="
                             text-[#6B6058]
-                            mt-5
-                            mb-5
-                            text-base
-                            sm:text-xl
+                            mt-8
+                            mb-8
+                            text-2xl
+                            md:mt-10
+                            md:mb-10
                             md:text-2xl
                             lg:text-3xl
                             xl:text-3xl
@@ -54,8 +53,8 @@ const WelcomePage = () => {
                 </div>
                 <div className="mt">
                     <Button
-                        text={"Descubrir mi tip"}
-                        route={"/test2"}//cambiar por onClick
+                        text={"Click to get started!"}
+                        route={"/home"}//cambiar por onClick
                         bgColor={"#8890B5"}
                         textColor={"#ffffff"}
                     />

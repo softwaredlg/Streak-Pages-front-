@@ -1,7 +1,9 @@
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './views/HomePage'
-import './styles/App.css'
 import WelcomePage from './views/WelcomePage'
+import StreakPage from './views/StreakPage'
+
+import './styles/App.css'
 
 function App() {
 
@@ -9,6 +11,8 @@ function App() {
     <Routes>
       <Route path='/home' element={<HomePage />} />
       <Route path='/welcome' element={<WelcomePage />} />
+      <Route path='/streak' element={<StreakPage />} />
+      
     </Routes>
   )
 }
