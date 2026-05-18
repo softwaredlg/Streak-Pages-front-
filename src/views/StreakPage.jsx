@@ -3,10 +3,8 @@ import Layout from "../components/layout"
 import { getIcon } from "../utils/dictionaries";
 
 const StreakPage = () => {
-    const responsive = `bg-red-500 sm:bg-blue-300 md:bg-blue-500 lg:bg-green-500 xl:bg-green-300 2xl:bg-green-100`
     return (
         <Layout>
-            <div className={responsive}><p>a</p></div>
             <div className="
                     p-5
                     h-134
@@ -36,32 +34,57 @@ const StreakPage = () => {
                     >
                     </p>
 
-                    <div className="text-center" id="phraseContainer">
+                    <div className="
+                            text-center 
+                            lg:text-left
+                            lg:pl-4 
+                            xl:pl-12
+                            2xl:pl-24
+                            "
+                        id="phraseContainer"
+                    >
                         <p className="
                                 text-xl
                                 sm:text-2xl
                                 lg:text-5xl
+                                xl:text-5xl
                                 "
                         >“RESPIRA PROFUNDO, HOY TODO FLUYE A TU FAVOR.”</p>
                         <p className="
                                 text-[#6B6058]
-                                mt-2
-                                md:text-lg
+                                mt-8
+                                lg:mt-4
+                                xl:mt-5
+                                md:text-xl
                                 "
                         >Tu descanso de anoche te preparo para hoy. <br />
                             Hazlo extraordinario.</p>
                     </div>
-                    <div className="flex border-2 w-full" id="actionButtonsContainer"> {/*Ver si esto jala!*/}
+                    <div className="
+                            flex 
+                            gap-x-3 
+                            w-full 
+                            mt-8
+                            justify-center
+                            lg:justify-start
+                            lg:pl-4
+                            lg:mt-4
+                            xl:mt-5
+                            xl:pl-12
+                            2xl:pl-24
+                            "
+                        id="actionButtonsContainer"
+                    > {/*Ver si esto jala!*/}
                         <div className="">
                             <Button
-                                icon={"foco"}
+                                icon={"guardar"}
                                 text={"Guardar"}
                                 bgColor={"#EEEBE4"}
                             />
                         </div>
                         <div className="">
                             <Button
-                                icon={"foco"}
+                                icon={"compartir"}
                                 text={"Compartir"}
                                 bgColor={"#EEEBE4"}
                             />
@@ -81,7 +104,7 @@ const StreakPage = () => {
                         <p></p>
                     </div>
                     <div className="my-8 flex flex-col items-center">
-                        <img src={getIcon("foco")/*Cambiar a calendario*/} alt="calendar"
+                        <img src={getIcon("calendario")} alt="calendar"
                             className="
                             w-12
                             h-12

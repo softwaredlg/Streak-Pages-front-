@@ -2,8 +2,12 @@
 import { Link } from "react-router-dom";
 import { getIcon } from "../utils/dictionaries";
 
-const Button = ({ text, route, bgColor, textColor, icon }) => {
+const Button = ({ text, route, onClick, bgColor, textColor, icon }) => {
     const iconSrc = getIcon(icon);
+
+    onClick = () => {
+        /*Completar para redireccion */
+    }
     return (
         <Link
             to={route}
@@ -12,11 +16,13 @@ const Button = ({ text, route, bgColor, textColor, icon }) => {
                 color: textColor
             }}
             className="
-                min-w-45
-                min-h-10
+                h-9
+                w-44
+                sm:h-10
+                sm:w-44
                 md:text-xl
-                2xl:min-h-12
-                2xl:min-w-50
+                lg:min-h-12
+                lg:min-w-50
                 inline-flex
                 flex-row
                 items-center
@@ -29,8 +35,21 @@ const Button = ({ text, route, bgColor, textColor, icon }) => {
                 transition
             "
         >
-            {iconSrc && <img src={iconSrc} alt={icon} className="w-7 h-7" />}
-            <span className="translate-y-px">{text}</span>
+            {iconSrc && <img src={iconSrc} alt={icon}
+                className="
+                    w-5
+                    h-5
+                    lg:w-6 
+                    lg:h-6
+                    "
+            />
+            }
+            <span className="
+                    translate-y-px 
+                    text-sm 
+                    lg:text-base
+                    "
+            >{text}</span>
         </Link>
     );
 };
