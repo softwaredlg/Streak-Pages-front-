@@ -1,6 +1,9 @@
 
 
-const Header = () => {
+const Header = ({ theme }) => {
+    const a = {
+
+    }
     return (
         <div className="w-full overflow-hidden"
             id="headerContainer"
@@ -8,7 +11,7 @@ const Header = () => {
             <header className="relative w-full"
                 id="header"
             >
-                <img src="src\assets\FondoDia.jpeg"
+                <img src={theme.bgImg}
                     alt="Header"
                     className="
                             w-full
@@ -37,18 +40,18 @@ const Header = () => {
                             "
                         id="headerTextContainer"
                     >
-                        <p className="
-                            font-serif 
-                            text-[#5C4A32]
-                            text-lg
-                            sm:text-2xl
-                            md:text-5xl
-                            lg:text-6xl
-                            xl:text-7xl 
-                            2xl:text-8xl 
-                            leading-tight 
-                            pb-1.5
-                            ">
+                        <p className={`
+                                font-serif
+                                ${theme.headerFontColorTitle}
+                                text-lg
+                                sm:text-2xl
+                                md:text-5xl
+                                lg:text-6xl
+                                xl:text-7xl
+                                2xl:text-8xl
+                                leading-tight
+                                pb-1.5
+                            `}>
                             Tu bienestar, <br />
                             nuestra obsesión.
                         </p>

@@ -1,14 +1,14 @@
 import Footer from "./footer";
 import Header from "./header";
 
-const Layout = ({children}) => {
+const Layout = ({children, theme}) => {
     return(
         <div className="flex flex-col min-h-screen">
-            <Header />
+            <Header theme={theme}/>
             <main className="flex-1">
                 {children}
             </main>
-            <Footer />
+            <Footer theme={theme}/>
         </div>
     )
 }

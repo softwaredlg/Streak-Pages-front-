@@ -2,9 +2,9 @@ import Button from "../components/button";
 import Layout from "../components/layout"
 import { getIcon } from "../utils/dictionaries";
 
-const StreakPage = () => {
+const StreakPage = ({theme}) => {
     return (
-        <Layout>
+        <Layout theme={theme}>
             <div className="
                     p-5
                     h-134

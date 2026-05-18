@@ -2,10 +2,10 @@ import Button from "../components/button";
 import Layout from "../components/layout"
 import RitualCard from "../components/ritualCard";
 
-const HomePage = () => {
+const HomePage = ({theme}) => {
     const responsive = `bg-red-500 sm:bg-blue-300 md:bg-blue-500 lg:bg-green-500 xl:bg-green-300 2xl:bg-green-100`
     return (
-        <Layout>
+        <Layout theme={theme}>
             <div className="
                     p-2
                     md:items-center
