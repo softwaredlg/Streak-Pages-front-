@@ -20,7 +20,7 @@ const Header = ({ theme }) => {
                             lg:h-fit
                             object-cover
                             "
-                    id=""
+                    id="imgHeader"
                 />
                 <div className="
                             absolute 
@@ -55,15 +55,15 @@ const Header = ({ theme }) => {
                             Tu bienestar, <br />
                             nuestra obsesión.
                         </p>
-                        <p className="
-                            text-[#6B6058] 
+                        <p className={`
+                            ${theme.headerFontSubTitle}
                             text-[0.6rem]
                             sm:text-base
                             md:text-xl
                             lg:text-2xl
                             xl:text-3xl
                             2xl:text-4xl
-                            "
+                        `}
                         >
                             Cada detalle está pensado para transformar<br />
                             tu descanso en una experiencia premium.

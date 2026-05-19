@@ -1,15 +1,16 @@
 
 
-const Footer = ({theme}) => {
+const Footer = ({ theme }) => {
     return (
         <footer
-            className="
+            className={`
                 w-full
-                bg-[#EEEBE4]
+                ${theme.bgFooter}
                 h-32
                 md:h-36
                 lg:h-40
-            "
+                `
+            }
             id="footer"
         >
             <div
@@ -26,14 +27,14 @@ const Footer = ({theme}) => {
                 id="footerContentContainer"
             >
                 <div
-                    className="
+                    className={`
                         text-base
                         md:text-xl
                         lg:text-2xl
-                        text-[#3D3D4E]
+                        ${theme.footerFontColorTitle}
                         font-serif
                         mb-1.5
-                    "
+                        `}
                     id="footerText1"
                 >
                     <p>
@@ -42,12 +43,12 @@ const Footer = ({theme}) => {
                 </div>
 
                 <div
-                    className="
+                    className={`
                         text-sm
                         md:text-base
                         lg:text-xl
-                        text-[#A8A49E]
-                    "
+                        ${theme.footerFontColorSubTitle}
+                    `}
                     id="footerText2"
                 >
                     <p>

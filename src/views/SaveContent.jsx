@@ -2,33 +2,33 @@ import Button from "../components/button";
 import Layout from "../components/layout"
 
 
-const SaveContent = ({theme}) => {
+const SaveContent = ({ theme }) => {
     const responsive = `bg-red-500 sm:bg-blue-300 md:bg-blue-500 lg:bg-green-500 xl:bg-green-300 2xl:bg-green-100`
 
     return (
 
         <Layout theme={theme}>
             <div className={responsive}><p>d</p></div>
-            <div className="my-3">
-                <Button
-                    icon={"regresar"}
-                    text={"Regresar"}
-                    bgColor={"#EEEBE4"}
-                />
-            </div>
-            <div className="
+            <div className={`
+                    ${theme.bgContent}               
                     p-5
                     h-134
                     flex
                     flex-col
-                    
                     lg:flex
                     lg:flex-row
                     lg:p-6
                     xl:p-8
                     2xl:p-10
-                    "
+                `}
             >
+                <div className={`my-3` /*Quitar?? */}>
+                    <Button
+                        icon={"regresar"}
+                        text={"Regresar"}
+                        bgColor={"#EEEBE4"}
+                    />
+                </div>
                 <div className="
                         flex
                         flex-col

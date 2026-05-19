@@ -7,7 +7,8 @@ const WelcomePage = ({theme}) => {
     const responsive = `bg-red-500 sm:bg-blue-300 md:bg-blue-500 lg:bg-green-500 xl:bg-green-300 2xl:bg-green-100`
     return (
         <Layout theme={theme}>
-            <div className="
+            <div className={`
+                    ${theme.bgContent}            
                     p-2
                     items-center
                     flex
@@ -19,7 +20,7 @@ const WelcomePage = ({theme}) => {
                     lg:p-6
                     xl:p-8
                     2xl:p-10
-                    "
+                `}
                 id="contentContainer"
             >
                 <div className="
@@ -29,16 +30,16 @@ const WelcomePage = ({theme}) => {
                         "
                     id="titlesContainer"
                 >
-                    <h1 className="
-                            text-[#2C4A5E]
-                            text-4xl
-                            sm:text-5xl
-                            lg:text-6xl
-                            2xl:text-7xl
-                            "
+                    <h1 className={`
+                        ${theme.contentFontColorTitle}
+                        text-4xl
+                        sm:text-5xl
+                        lg:text-6xl
+                        2xl:text-7xl
+                        `}
                     >Ready to start?</h1>
-                    <h2 className="
-                            text-[#6B6058]
+                    <h2 className={`
+                            ${theme.contentFontColorSubTitle}
                             mt-8
                             mb-8
                             text-2xl
@@ -48,7 +49,7 @@ const WelcomePage = ({theme}) => {
                             lg:text-3xl
                             xl:text-3xl
                             2xl:text-4xl
-                            "
+                        `}
                     >Your daily experience awaits.</h2>
                 </div>
                 <div className="mt">

@@ -2,11 +2,12 @@ import Button from "../components/button";
 import Layout from "../components/layout"
 import RitualCard from "../components/ritualCard";
 
-const HomePage = ({theme}) => {
+const HomePage = ({ theme }) => {
     const responsive = `bg-red-500 sm:bg-blue-300 md:bg-blue-500 lg:bg-green-500 xl:bg-green-300 2xl:bg-green-100`
     return (
         <Layout theme={theme}>
-            <div className="
+            <div className={`
+                    ${theme.bgContent}      
                     p-2
                     md:items-center
                     md:max-w-full
@@ -18,7 +19,7 @@ const HomePage = ({theme}) => {
                     lg:p-6
                     xl:p-8
                     2xl:p-10
-                    "
+            `}
                 id="contentContainer"
             >
                 <div className="
@@ -28,26 +29,27 @@ const HomePage = ({theme}) => {
                         "
                     id="titlesContainer"
                 >
-                    <h1 className="
-                            text-[#2C4A5E]
-                            text-2xl
-                            sm:text-3xl
-                            md:text-5xl
-                            lg:text-6xl
-                            xl:text-6xl
-                            2xl:text-7xl
-                            "
+                    <h1 className={`
+                    ${theme.contentFontColorTitle}
+                    text-2xl
+                    sm:text-3xl
+                    md:text-5xl
+                    lg:text-6xl
+                    xl:text-6xl
+                    2xl:text-7xl
+                    `}
                     >Descubre tu ritual matutino</h1>
-                    <h2 className="
-                            text-[#6B6058]
-                            mt-2
-                            text-base
-                            sm:text-xl
-                            md:text-2xl
-                            lg:text-3xl
-                            xl:text-3xl
-                            2xl:text-4xl
-                            "
+                    <h2 className={`
+                    ${theme.contentFontColorSubTitle}
+                    mt-2
+                    text-base
+                    sm:text-xl
+                    md:text-2xl
+                    lg:text-3xl
+                    xl:text-3xl
+                    2xl:text-4xl
+                    
+                    `}
                     >Elige comó quieres comenzar tu día</h2>
                 </div>
                 <div className="
@@ -75,12 +77,12 @@ const HomePage = ({theme}) => {
                             />
                         </div>
                         <div className="flex justify-center">
-                            <p className="
-                                text-[#6B6058] 
+                            <p className={`                           
+                                ${theme.ritualCardFontColorText}
                                 text-2xl
                                 my-4
                                 sm:my-2.5
-                                "
+                            `}
                             >Energía y activación</p>
                         </div>
                     </div>
@@ -97,12 +99,12 @@ const HomePage = ({theme}) => {
                             />
                         </div>
                         <div className="flex justify-center">
-                            <p className="
-                                text-[#6B6058] 
+                            <p className={`                           
+                                ${theme.ritualCardFontColorText}
                                 text-2xl
                                 my-4
-                                sm:my-2.5 
-                                "
+                                sm:my-2.5
+                            `}
                             >Potencia tu mañana</p>
                         </div>
                     </div>

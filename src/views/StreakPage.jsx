@@ -5,7 +5,8 @@ import { getIcon } from "../utils/dictionaries";
 const StreakPage = ({theme}) => {
     return (
         <Layout theme={theme}>
-            <div className="
+            <div className={`
+                    ${theme.bgContent}
                     p-5
                     h-134
                     flex
@@ -17,7 +18,7 @@ const StreakPage = ({theme}) => {
                     lg:p-6
                     xl:p-8
                     2xl:p-10
-                "
+                `}
                 id="contenContainer"
             >
                 <div className="
@@ -43,20 +44,21 @@ const StreakPage = ({theme}) => {
                             "
                         id="phraseContainer"
                     >
-                        <p className="
+                        <p className={`
+                                ${theme.contentFontColor}
                                 text-xl
                                 sm:text-2xl
                                 lg:text-5xl
                                 xl:text-5xl
-                                "
+                            `}
                         >“RESPIRA PROFUNDO, HOY TODO FLUYE A TU FAVOR.”</p>
-                        <p className="
-                                text-[#6B6058]
+                        <p className={`
+                                ${theme.contentFontColorSubText}
                                 mt-8
                                 lg:mt-4
                                 xl:mt-5
                                 md:text-xl
-                                "
+                            `}
                         >Tu descanso de anoche te preparo para hoy. <br />
                             Hazlo extraordinario.</p>
                     </div>
@@ -115,23 +117,23 @@ const StreakPage = ({theme}) => {
                             lg:h-16
                             "
                         />
-                        <p className="
-                            text-[#6B6058]
+                        <p className={`
+                            ${theme.contetCalendarText}
                             text-sm
                             md:text-sm
                             lg:text-base
-                            "
+                            `}
                         >DÍAS DISFRUTANDO TU DESCANSO
                         </p>
                     </div>
-                    <p className="text-5xl">0</p>
-                    <p className="
-                            text-[#6B6058]
+                    <p className={`${theme.contetNumberText} text-5xl`}>0</p>
+                    <p className={`
+                            ${theme.contetCountText}
                             text-center 
                             text-base
                             md:text-lg
                             lg:text-xl
-                            "
+                        `}
                     >Cada noche cuenta. Sigue construyendo noches de <br />
                         confort y mañanas llenas de energía.</p>
                 </div>
