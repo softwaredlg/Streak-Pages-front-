@@ -20,7 +20,7 @@ const Header = ({ theme }) => {
                             lg:h-fit
                             object-cover
                             "
-                    id="imgHeader"
+                    id=""
                 />
                 <div className="
                             absolute 
