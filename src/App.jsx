@@ -16,7 +16,7 @@ function App() {
     const currentHour = new Date().getHours();
     console.log("horario "+ currentHour);
 
-    if(currentHour >= 18 || currentHour < 6){
+    if(currentHour >= 17 || currentHour < 6){
       setThemeMode("night");
     }else{
       setThemeMode("day");

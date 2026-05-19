@@ -1,12 +1,32 @@
 import Button from "../components/button";
 import Layout from "../components/layout"
+import Modal from "../components/modal";
 import { getIcon } from "../utils/dictionaries";
+import { useState } from "react";
 
-const StreakPage = ({theme}) => {
+const StreakPage = ({ theme }) => {
+    const [ModalOpen, setModalOpen] = useState(false);
+    const [copied, setCopied] = useState(false);
+    const phrase = "HOY ES UN BUEN DÍA PARA EMPEZAR SIN MIEDO."
+
+    const handlerOpenModal = () => {
+        setModalOpen(true);
+    }
+
+    const handleCopy = async () => {
+
+        await navigator.clipboard.writeText(phrase);
+
+        setCopied(true);
+
+        setTimeout(() => {
+            setCopied(false);
+        }, 2000);
+    }
+
     return (
         <Layout theme={theme}>
             <div className={`
-                    ${theme.bgContent}
                     p-5
                     h-134
                     flex
@@ -19,7 +39,7 @@ const StreakPage = ({theme}) => {
                     xl:p-8
                     2xl:p-10
                 `}
-                id="contenContainer"
+                id="contentContainer"
             >
                 <div className="
                         flex
@@ -27,7 +47,7 @@ const StreakPage = ({theme}) => {
                         items-center
                         lg:w-screen
                         "
-                    id="streakPhraseContainer"
+                    id="streakContentContainer"
                 >
                     <p className="
                             text-xl
@@ -42,7 +62,7 @@ const StreakPage = ({theme}) => {
                             xl:pl-12
                             2xl:pl-24
                             "
-                        id="phraseContainer"
+                        id="streakContent"
                     >
                         <p className={`
                                 ${theme.contentFontColor}
@@ -50,8 +70,9 @@ const StreakPage = ({theme}) => {
                                 sm:text-2xl
                                 lg:text-5xl
                                 xl:text-5xl
-                            `}
-                        >“RESPIRA PROFUNDO, HOY TODO FLUYE A TU FAVOR.”</p>
+                            ` }
+                            id="content"
+                        >{phrase}</p>
                         <p className={`
                                 ${theme.contentFontColorSubText}
                                 mt-8
@@ -86,6 +107,7 @@ const StreakPage = ({theme}) => {
                         </div>
                         <div className="">
                             <Button
+                                onClick={handlerOpenModal}
                                 icon={"compartir"}
                                 text={"Compartir"}
                                 bgColor={"#EEEBE4"}
@@ -138,6 +160,44 @@ const StreakPage = ({theme}) => {
                         confort y mañanas llenas de energía.</p>
                 </div>
             </div>
+
+            {
+                ModalOpen && (
+                    <Modal text={"Compartir en..."} setModalOpen={setModalOpen} >
+                        <div className="flex flex-row gap-x-16 mt-3">
+                            <div className="
+                                    cursor-pointer
+                                    hover:scale-105
+                                    transition
+                                    duration-200
+                            "
+                                id="img1"
+                            >
+                                <img src={getIcon("facebook")} alt="facebook" className=" w-16 h-16" />
+                            </div>
+                            <div className="
+                                    cursor-pointer
+                                    hover:scale-105
+                                    transition
+                                    duration-200
+                            "
+                                id="img2"
+                            >
+                                <img src={getIcon("whatsapp")} alt="whatsapp" className=" w-16 h-16" />
+                            </div>
+                        </div>
+                        <div className="mt-5 flex justify-center " id="copyContainer">
+                            <button className="flex flex-row gap-2.5 cursor-pointer" onClick={handleCopy}>
+                                <img src={getIcon("copiar")} alt="copia" className=" w-5 h-5" />
+                                <p>
+                                    {copied ? "¡Copiado!" : "Copiar texto"}
+                                </p>
+                            </button>
+                        </div>
+                    </Modal>
+                )
+            }
+
         </Layout >
     );
 };

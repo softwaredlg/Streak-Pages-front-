@@ -8,7 +8,7 @@ const WelcomePage = ({theme}) => {
     return (
         <Layout theme={theme}>
             <div className={`
-                    ${theme.bgContent}            
+                              
                     p-2
                     items-center
                     flex

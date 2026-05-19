@@ -8,9 +8,8 @@ const SaveContent = ({ theme }) => {
     return (
 
         <Layout theme={theme}>
-            <div className={responsive}><p>d</p></div>
             <div className={`
-                    ${theme.bgContent}               
+                    gap-x-5            
                     p-5
                     h-134
                     flex
@@ -22,55 +21,492 @@ const SaveContent = ({ theme }) => {
                     2xl:p-10
                 `}
             >
-                <div className={`my-3` /*Quitar?? */}>
-                    <Button
-                        icon={"regresar"}
-                        text={"Regresar"}
-                        bgColor={"#EEEBE4"}
-                    />
-                </div>
                 <div className="
                         flex
                         flex-col
+                        overflow-y-auto
+                        pr-2
+                        max-h-64
+                        md:max-h-64
+                        lg:max-h-125
                         lg:w-screen
-                        border-4
                         "
                     id="savePhrasesContainer"
                 >
-                    <p className="
-                                text-[#6B6058]
-                                text-2xl
-                                "
+                    <p className={`
+                        ${theme.contentFontColorTitle}
+                        text-2xl
+                    `}
                     >Tus frases guardadas</p>
                     <div className="">
-                        <p className="
+                        <p className={`
+                                ${theme.contentFontColor}
                                 text-base 
                                 md:text-xl
                                 py-5
-                                "
+                        
+                            `}
+                        >“Respira profundo, hoy todo fluye a tu favor.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                        
+                            `}
+                        >“Respira profundo, hoy todo fluye a tu favor.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                        
+                            `}
+                        >“Respira profundo, hoy todo fluye a tu favor.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                        
+                            `}
+                        >“Respira profundo, hoy todo fluye a tu favor.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                        
+                            `}
+                        >“Respira profundo, hoy todo fluye a tu favor.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                        
+                            `}
+                        >“Respira profundo, hoy todo fluye a tu favor.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                        
+                            `}
+                        >“Respira profundo, hoy todo fluye a tu favor.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                        
+                            `}
+                        >“Respira profundo, hoy todo fluye a tu favor.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                        
+                            `}
+                        >“Respira profundo, hoy todo fluye a tu favor.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                        
+                            `}
+                        >“Respira profundo, hoy todo fluye a tu favor.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                        
+                            `}
+                        >“Respira profundo, hoy todo fluye a tu favor.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                        
+                            `}
+                        >“Respira profundo, hoy todo fluye a tu favor.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                        
+                            `}
+                        >“Respira profundo, hoy todo fluye a tu favor.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                        
+                            `}
+                        >“Respira profundo, hoy todo fluye a tu favor.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                        
+                            `}
+                        >“Respira profundo, hoy todo fluye a tu favor.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                        
+                            `}
+                        >“Respira profundo, hoy todo fluye a tu favor.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                        
+                            `}
+                        >“Respira profundo, hoy todo fluye a tu favor.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                        
+                            `}
+                        >“Respira profundo, hoy todo fluye a tu favor.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                        
+                            `}
+                        >“Respira profundo, hoy todo fluye a tu favor.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                        
+                            `}
+                        >“Respira profundo, hoy todo fluye a tu favor.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                        
+                            `}
+                        >“Respira profundo, hoy todo fluye a tu favor.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                        
+                            `}
                         >“Respira profundo, hoy todo fluye a tu favor.”</p>
                     </div>
                 </div>
                 <div className="
                         flex
                         flex-col
+                        overflow-y-auto
+                        pr-2
+                        max-h-64
+                        md:max-h-64
+                        lg:max-h-125
                         lg:w-screen
-                        border-4
                         "
                     id="saveTipsContainer"
                 >
-                    <p className="
-                        text-[#6B6058] 
-                        text-2xl 
-                        "
+                    <p className={`
+                            ${theme.contentFontColorTitle}
+                            text-2xl
+                        `}
                     >Tus tips guardados</p>
                     <div className="">
-                        <p className="
-                            text-base
-                            py-5
-                            md:text-xl
-                            "
-                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
+                        <p className={`
+                                ${theme.contentFontColor}
+                                text-base 
+                                md:text-xl
+                                py-5
+                            `}
+                        >“Antes de mirar el celular, decide qué quieres lograr hoy y da el primer
+                            paso en los primeros 5 minutos.”</p>
                     </div>
                 </div>
             </div>

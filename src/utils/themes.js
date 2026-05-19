@@ -26,7 +26,7 @@ export const themes = {
         contetCalendarText: "text-[#999999]",
         contetCountText: "text-[#999999]",
         contetNumberText: "text-[#ffffff]",
-        ritualCardFontColorText: "text-[#6D6D6D]",
+        ritualCardFontColorText: "text-[#999999]",
         bgFooter: "bg-[#151b29]",
         footerFontColorTitle: "text-[#ffffff]",
         footerFontColorSubTitle: "text-[#999999]",
