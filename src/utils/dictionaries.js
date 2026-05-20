@@ -7,6 +7,7 @@ import regresaIcon from '../assets/regresar.png'
 import facebookIcon from '../assets/facebook.png'
 import whatsappIcon from '../assets/whats.png'
 import copiarIcon from '../assets/copia.png'
+import cerrarIcon from '../assets/cerrar.png'
 
 export const getIcon = key => {
     const icons = {
@@ -18,7 +19,8 @@ export const getIcon = key => {
         regresar: regresaIcon,
         facebook: facebookIcon,
         whatsapp: whatsappIcon,
-        copiar: copiarIcon
+        copiar: copiarIcon,
+        cerrar: cerrarIcon
     };
     return icons[key] || null
 }

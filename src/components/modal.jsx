@@ -1,3 +1,5 @@
+import { getIcon } from "../utils/dictionaries";
+
 const Modal = ({ text, children, setModalOpen }) => {
 
     return (
@@ -33,7 +35,7 @@ const Modal = ({ text, children, setModalOpen }) => {
                     "
                 >
                     <button className="cursor-pointer" onClick={() => setModalOpen(false)}>
-                        <img src="src\assets\copia.png" alt="cerrar" className="w-5 h-5" />
+                        <img src={getIcon("cerrar")} alt="cerrar" className="w-5 h-5" />
                     </button>
                 </div>
                 <div

@@ -5,23 +5,23 @@ import { getIcon } from "../utils/dictionaries";
 import { useState } from "react";
 
 const StreakPage = ({ theme }) => {
-    const [ModalOpen, setModalOpen] = useState(false);
     const [copied, setCopied] = useState(false);
-    const phrase = "HOY ES UN BUEN DÍA PARA EMPEZAR SIN MIEDO."
+    const content = "HOY ES UN BUEN DÍA PARA EMPEZAR SIN MIEDO."
 
-    const handlerOpenModal = () => {
-        setModalOpen(true);
-    }
+    const handleShare = async () => {
+        const text = `${content}\n\n#SleepWell`
 
-    const handleCopy = async () => {
-
-        await navigator.clipboard.writeText(phrase);
-
-        setCopied(true);
-
-        setTimeout(() => {
-            setCopied(false);
-        }, 2000);
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: "DRJOOHN",
+                    text
+                })
+                return
+            } catch (err) {
+                console.log(err)
+            }
+        }
     }
 
     return (
@@ -72,7 +72,7 @@ const StreakPage = ({ theme }) => {
                                 xl:text-5xl
                             ` }
                             id="content"
-                        >{phrase}</p>
+                        >{content}</p>
                         <p className={`
                                 ${theme.contentFontColorSubText}
                                 mt-8
@@ -107,7 +107,7 @@ const StreakPage = ({ theme }) => {
                         </div>
                         <div className="">
                             <Button
-                                onClick={handlerOpenModal}
+                                onClick={handleShare}
                                 icon={"compartir"}
                                 text={"Compartir"}
                                 bgColor={"#EEEBE4"}
@@ -161,7 +161,7 @@ const StreakPage = ({ theme }) => {
                 </div>
             </div>
 
-            {
+            {/*Quitar???? 
                 ModalOpen && (
                     <Modal text={"Compartir en..."} setModalOpen={setModalOpen} >
                         <div className="flex flex-row gap-x-16 mt-3">
@@ -196,6 +196,7 @@ const StreakPage = ({ theme }) => {
                         </div>
                     </Modal>
                 )
+                */
             }
 
         </Layout >
