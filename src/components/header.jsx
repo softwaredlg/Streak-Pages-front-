@@ -18,7 +18,6 @@ const Header = ({ theme }) => {
                             h-fit
                             md:h-fit
                             lg:h-fit
-                            object-cover
                             "
                     id="imgHeader"
                 />

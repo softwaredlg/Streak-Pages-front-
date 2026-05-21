@@ -3,7 +3,6 @@ import Layout from "../components/layout"
 import RitualCard from "../components/ritualCard";
 
 const HomePage = ({ theme }) => {
-    const responsive = `bg-red-500 sm:bg-blue-300 md:bg-blue-500 lg:bg-green-500 xl:bg-green-300 2xl:bg-green-100`
     return (
         <Layout theme={theme}>
             <div className={`    
@@ -30,6 +29,7 @@ const HomePage = ({ theme }) => {
                 >
                     <h1 className={`
                     ${theme.contentFontColorTitle}
+                    font-serif
                     text-2xl
                     sm:text-3xl
                     md:text-5xl

@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const StreakPage = ({ theme }) => {
     const [copied, setCopied] = useState(false);
-    const content = "HOY ES UN BUEN DÍA PARA EMPEZAR SIN MIEDO."
+    const content = '"HOY ES UN BUEN DÍA PARA EMPEZAR SIN MIEDO."'
 
     const handleShare = async () => {
         const text = `${content}\n\n#SleepWell`
@@ -66,6 +66,7 @@ const StreakPage = ({ theme }) => {
                     >
                         <p className={`
                                 ${theme.contentFontColor}
+                                font-serif
                                 text-xl
                                 sm:text-2xl
                                 lg:text-5xl
