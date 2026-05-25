@@ -1,8 +1,52 @@
 import Button from "../components/button";
 import Layout from "../components/layout"
 import RitualCard from "../components/ritualCard";
+import { useEffect, useState } from "react";
+import { dayliClaim } from "../services/claim.service";
+import { useNavigate } from "react-router-dom";
+import { getUserData } from "../helpers/storage.service";
+import { hasClaimeToday } from "../utils/claim";
 
 const HomePage = ({ theme }) => {
+
+    const navigate = useNavigate();
+
+    const userData = getUserData();
+
+    const handlerClaimContent = async (type) => {
+        try {
+
+            const userId = userData?.id;
+
+            if (!userId) {
+                return
+            }
+
+            if (userId) {
+                console.log(`Tipo de contenido elegido ${type}`);
+
+                const claim = await dayliClaim(type, userId);
+
+                if (claim) {
+                    console.log("Reclamo hecho con exito");
+                    navigate("/streak", { replace: true });
+                }
+            }
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    useEffect(() => {
+        if (hasClaimeToday()) {
+            navigate("/streak")
+        }
+
+        if (!userData){
+            navigate("/welcome")
+        }
+    }, [])
+
     return (
         <Layout theme={theme}>
             <div className={`    
@@ -70,7 +114,7 @@ const HomePage = ({ theme }) => {
                         <div className="flex justify-center" id="phraseButtonContainer">
                             <Button
                                 text={"Descubrir mi frase"}
-                                route={"/test"}//cambiar por onClick
+                                onClick={() => handlerClaimContent("PHRASE")}//cambiar por onClick
                                 bgColor={"#8890B5"}
                                 textColor={"#ffffff"}
                             />
@@ -92,7 +136,7 @@ const HomePage = ({ theme }) => {
                         <div className="flex justify-center" id="tipButtonContainer">
                             <Button
                                 text={"Descubrir mi tip"}
-                                route={"/test2"}//cambiar por onClick
+                                onClick={() => handlerClaimContent("TIP")}//cambiar por onClick
                                 bgColor={"#8890B5"}
                                 textColor={"#ffffff"}
                             />

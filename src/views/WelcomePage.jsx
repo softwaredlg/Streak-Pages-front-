@@ -1,9 +1,36 @@
 import Button from "../components/button";
 import Layout from "../components/layout"
 import RitualCard from "../components/ritualCard";
+import { registerUser } from "../services/auth.service";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
+const WelcomePage = ({ theme }) => {
 
-const WelcomePage = ({theme}) => {
+    const navigate = useNavigate();
+
+    const handleRegister = async () => {
+        try {
+            const register = await registerUser();
+
+            if (register) {
+                console.log("Registro completado correctamente");
+                navigate("/home",{replace: true});
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    useEffect(() => {
+        const userId =
+            localStorage.getItem("user_data");
+
+        if (userId) {
+            navigate("/home",{replace: true});
+        }
+    }, [])
+
     return (
         <Layout theme={theme}>
             <div className={`
@@ -55,7 +82,7 @@ const WelcomePage = ({theme}) => {
                 <div className="mt">
                     <Button
                         text={"Click to get started!"}
-                        route={"/home"}//cambiar por onClick
+                        onClick={handleRegister}
                         bgColor={"#8890B5"}
                         textColor={"#ffffff"}
                     />

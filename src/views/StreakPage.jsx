@@ -3,10 +3,11 @@ import Layout from "../components/layout"
 import Modal from "../components/modal";
 import { getIcon } from "../utils/dictionaries";
 import { useState } from "react";
+import { getClaimData } from "../helpers/storage.service";
+import { saveContent } from "../services/content.service";
 
 const StreakPage = ({ theme }) => {
-    const [copied, setCopied] = useState(false);
-    const content = '"HOY ES UN BUEN DÍA PARA EMPEZAR SIN MIEDO."'
+    const content = getClaimData();
 
     const handleShare = async () => {
         const text = `${content}\n\n#SleepWell`
@@ -18,9 +19,20 @@ const StreakPage = ({ theme }) => {
                     text
                 })
                 return
-            } catch (err) {
-                console.log(err)
+            } catch (error) {
+                console.log(error)
             }
+        }
+    };
+
+    const handlerSaveContent = async () => {
+        try{
+            const savecontent = await saveContent();
+            if(savecontent) {
+                console.log("Contenido guardado correctamente")
+            }
+        }catch(error){
+            console.error(error);
         }
     }
 
@@ -73,7 +85,7 @@ const StreakPage = ({ theme }) => {
                                 xl:text-5xl
                             ` }
                             id="content"
-                        >{content}</p>
+                        >{content.content.text}</p>
                         <p className={`
                                 ${theme.contentFontColorSubText}
                                 mt-8
@@ -101,6 +113,7 @@ const StreakPage = ({ theme }) => {
                     > {/*Ver si esto jala!*/}
                         <div className="">
                             <Button
+                                onClick={handlerSaveContent}
                                 icon={"guardar"}
                                 text={"Guardar"}
                                 bgColor={"#EEEBE4"}
@@ -149,7 +162,7 @@ const StreakPage = ({ theme }) => {
                         >DÍAS DISFRUTANDO TU DESCANSO
                         </p>
                     </div>
-                    <p className={`${theme.contetNumberText} text-5xl`}>0</p>
+                    <p className={`${theme.contetNumberText} text-5xl`}>{content.streak}</p>
                     <p className={`
                             ${theme.contetCountText}
                             text-center 
@@ -161,45 +174,6 @@ const StreakPage = ({ theme }) => {
                         confort y mañanas llenas de energía.</p>
                 </div>
             </div>
-
-            {/*Quitar???? 
-                ModalOpen && (
-                    <Modal text={"Compartir en..."} setModalOpen={setModalOpen} >
-                        <div className="flex flex-row gap-x-16 mt-3">
-                            <div className="
-                                    cursor-pointer
-                                    hover:scale-105
-                                    transition
-                                    duration-200
-                            "
-                                id="img1"
-                            >
-                                <img src={getIcon("facebook")} alt="facebook" className=" w-16 h-16" />
-                            </div>
-                            <div className="
-                                    cursor-pointer
-                                    hover:scale-105
-                                    transition
-                                    duration-200
-                            "
-                                id="img2"
-                            >
-                                <img src={getIcon("whatsapp")} alt="whatsapp" className=" w-16 h-16" />
-                            </div>
-                        </div>
-                        <div className="mt-5 flex justify-center " id="copyContainer">
-                            <button className="flex flex-row gap-2.5 cursor-pointer" onClick={handleCopy}>
-                                <img src={getIcon("copiar")} alt="copia" className=" w-5 h-5" />
-                                <p>
-                                    {copied ? "¡Copiado!" : "Copiar texto"}
-                                </p>
-                            </button>
-                        </div>
-                    </Modal>
-                )
-                */
-            }
-
         </Layout >
     );
 };
