@@ -93,8 +93,8 @@ const StreakPage = ({ theme }) => {
                                 xl:mt-5
                                 md:text-xl
                             `}
-                        >Tu descanso de anoche te preparo para hoy. <br />
-                            Hazlo extraordinario.</p>
+                        >Your rest last night has prepared you for today.<br />
+                            Make it extraordinary.</p>
                     </div>
                     <div className="
                             flex 
@@ -115,7 +115,7 @@ const StreakPage = ({ theme }) => {
                             <Button
                                 onClick={handlerSaveContent}
                                 icon={"guardar"}
-                                text={"Guardar"}
+                                text={"Save"}
                                 bgColor={"#EEEBE4"}
                             />
                         </div>
@@ -123,7 +123,7 @@ const StreakPage = ({ theme }) => {
                             <Button
                                 onClick={handleShare}
                                 icon={"compartir"}
-                                text={"Compartir"}
+                                text={"Share"}
                                 bgColor={"#EEEBE4"}
                             />
                         </div>
@@ -159,7 +159,7 @@ const StreakPage = ({ theme }) => {
                             md:text-sm
                             lg:text-base
                             `}
-                        >DÍAS DISFRUTANDO TU DESCANSO
+                        >DAYS OF RELAXATION
                         </p>
                     </div>
                     <p className={`${theme.contetNumberText} text-5xl`}>{content.streak}</p>
@@ -170,8 +170,8 @@ const StreakPage = ({ theme }) => {
                             md:text-lg
                             lg:text-xl
                         `}
-                    >Cada noche cuenta. Sigue construyendo noches de <br />
-                        confort y mañanas llenas de energía.</p>
+                    >Every night counts. Keep creating nights of <br />
+                        comfort and mornings full of energy.</p>
                 </div>
             </div>
         </Layout >

@@ -1,9 +1,6 @@
 
 
 const Header = ({ theme }) => {
-    const a = {
-
-    }
     return (
         <div className="w-full overflow-hidden"
             id="headerContainer"
@@ -51,8 +48,8 @@ const Header = ({ theme }) => {
                                 leading-tight
                                 pb-1.5
                             `}>
-                            Tu bienestar, <br />
-                            nuestra obsesión.
+                            Your well-being, <br />
+                            our obsession.
                         </p>
                         <p className={`
                             ${theme.headerFontSubTitle}
@@ -64,8 +61,8 @@ const Header = ({ theme }) => {
                             2xl:text-4xl
                         `}
                         >
-                            Cada detalle está pensado para transformar<br />
-                            tu descanso en una experiencia premium.
+                            Every detail is designed to turn your stay<br />
+                            into a premium experience.
                         </p>
                     </div>
                 </div>

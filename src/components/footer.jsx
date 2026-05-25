@@ -38,7 +38,7 @@ const Footer = ({ theme }) => {
                     id="footerText1"
                 >
                     <p>
-                        Descansa mejor. Vive mejor.
+                        Sleep better. Live better.
                     </p>
                 </div>
 
@@ -52,7 +52,7 @@ const Footer = ({ theme }) => {
                     id="footerText2"
                 >
                     <p>
-                        © 2026 Diseñado para tu bienestar
+                        © 2026 Designed for your well-being
                     </p>
                 </div>
             </div>

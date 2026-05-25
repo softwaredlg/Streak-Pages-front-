@@ -81,7 +81,7 @@ const HomePage = ({ theme }) => {
                     xl:text-6xl
                     2xl:text-7xl
                     `}
-                    >Descubre tu ritual matutino</h1>
+                    >Discover your morning routine</h1>
                     <h2 className={`
                     ${theme.contentFontColorSubTitle}
                     mt-2
@@ -93,7 +93,7 @@ const HomePage = ({ theme }) => {
                     2xl:text-4xl
                     
                     `}
-                    >Elige comó quieres comenzar tu día</h2>
+                    >Choose how you want to start your day</h2>
                 </div>
                 <div className="
                         gap-2
@@ -113,7 +113,7 @@ const HomePage = ({ theme }) => {
                         </div>
                         <div className="flex justify-center" id="phraseButtonContainer">
                             <Button
-                                text={"Descubrir mi frase"}
+                                text={"Discover my quote"}
                                 onClick={() => handlerClaimContent("PHRASE")}//cambiar por onClick
                                 bgColor={"#8890B5"}
                                 textColor={"#ffffff"}
@@ -126,7 +126,7 @@ const HomePage = ({ theme }) => {
                                 my-4
                                 sm:my-2.5
                             `}
-                            >Energía y activación</p>
+                            >Energy and Activation</p>
                         </div>
                     </div>
                     <div className="" id="tipContainer">
@@ -135,7 +135,7 @@ const HomePage = ({ theme }) => {
                         </div>
                         <div className="flex justify-center" id="tipButtonContainer">
                             <Button
-                                text={"Descubrir mi tip"}
+                                text={"Discover my tip"}
                                 onClick={() => handlerClaimContent("TIP")}//cambiar por onClick
                                 bgColor={"#8890B5"}
                                 textColor={"#ffffff"}
@@ -148,7 +148,7 @@ const HomePage = ({ theme }) => {
                                 my-4
                                 sm:my-2.5
                             `}
-                            >Potencia tu mañana</p>
+                            >Boost Your Morning</p>
                         </div>
                     </div>
                 </div>

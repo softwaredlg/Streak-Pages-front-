@@ -71,7 +71,7 @@ const SaveContent = ({ theme }) => {
                         ${theme.contentFontColorTitle}
                         text-2xl
                     `}
-                    >Tus frases guardadas</p>
+                    >Your saved phrases</p>
                     {
                         savedPhrases.map(
                             ({ content_id, contents }) => (
@@ -108,7 +108,7 @@ const SaveContent = ({ theme }) => {
                             ${theme.contentFontColorTitle}
                             text-2xl
                         `}
-                    >Tus tips guardados</p>
+                    >Your saved tips</p>
                     {
                         savedTips.map(
                             ({ content_id, contents }) => (
