@@ -1,9 +1,11 @@
+import { getIcon } from "./dictionaries"
 
 export const themes = {
     day: {
         bgImg: "public/FondoDia.jpeg",
         headerFontColorTitle: "text-[#5C4A32]",
         headerFontSubTitle: "text-[#6B6058]" ,
+        menuTheme: getIcon("menuDay"),
         contentFontColorTitle: "text-[#2C4A5E]",
         contentFontColorSubTitle: "text-[#6B6058]",
         ritualCardFontColorText: "text-[#6B6058]",
@@ -19,6 +21,7 @@ export const themes = {
         headerFontColorTitle: "text-[#ffffff]",
         headerFontSubTitle: "text-[#a2daf6]",
         bgContent: "bg-[#0b121d]",
+        menuTheme: getIcon("menuNight"),
         contentFontColorTitle: "text-[#a2daf6]",
         contentFontColorSubTitle: "text-[#ffffff]",
         contentFontColor: "text-[#ffffff]",

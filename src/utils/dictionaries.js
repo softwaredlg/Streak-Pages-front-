@@ -8,6 +8,8 @@ import facebookIcon from '../assets/facebook.png'
 import whatsappIcon from '../assets/whats.png'
 import copiarIcon from '../assets/copia.png'
 import cerrarIcon from '../assets/cerrar.png'
+import menuNightIcon from '../assets/menuNight.png'
+import menuDayIcon from '../assets/menuDay.png'
 
 export const getIcon = key => {
     const icons = {
@@ -20,7 +22,9 @@ export const getIcon = key => {
         facebook: facebookIcon,
         whatsapp: whatsappIcon,
         copiar: copiarIcon,
-        cerrar: cerrarIcon
+        cerrar: cerrarIcon,
+        menuNight: menuNightIcon,
+        menuDay: menuDayIcon
     };
     return icons[key] || null
 }

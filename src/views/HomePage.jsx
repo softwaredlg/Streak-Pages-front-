@@ -1,6 +1,7 @@
 import Button from "../components/button";
 import Layout from "../components/layout"
 import RitualCard from "../components/ritualCard";
+import Menu from "../components/menu";
 import { useEffect, useState } from "react";
 import { dayliClaim } from "../services/claim.service";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +9,7 @@ import { getUserData } from "../helpers/storage.service";
 import { hasClaimeToday } from "../utils/claim";
 
 const HomePage = ({ theme }) => {
+    const [openMenu, setOpenMenu] = useState(false);
 
     const navigate = useNavigate();
 
@@ -42,13 +44,20 @@ const HomePage = ({ theme }) => {
             navigate("/streak")
         }
 
-        if (!userData){
+        /*if (!userData){
             navigate("/welcome")
-        }
+        }*/
     }, [])
 
     return (
         <Layout theme={theme}>
+            <div className="
+                    flex
+                    justify-end
+                    py-1.5
+                ">
+                <Menu icon={theme.menuTheme} />
+            </div>
             <div className={`    
                     p-2
                     md:items-center
@@ -64,6 +73,7 @@ const HomePage = ({ theme }) => {
             `}
                 id="contentContainer"
             >
+
                 <div className="
                         flex
                         flex-col
