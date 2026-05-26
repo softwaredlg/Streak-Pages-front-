@@ -11,7 +11,7 @@ const Menu = ({ icon }) => {
     }
 
     return (
-        <div className="relative">
+        <div className="relative bg-white p-2.5 rounded-2xl">
 
             {/* Botón menu */}
             <button

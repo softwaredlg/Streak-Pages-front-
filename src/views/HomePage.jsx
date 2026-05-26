@@ -65,7 +65,8 @@ const HomePage = ({ theme }) => {
             <div className="
                     flex
                     justify-end
-                    p-2.5
+                    pt-5
+                    pr-5
                 ">
                 <Menu icon={theme.menuTheme} />
             </div>
