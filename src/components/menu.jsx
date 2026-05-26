@@ -1,8 +1,14 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Menu = ({ icon }) => {
 
     const [open, setOpen] = useState(false);
+    const navigate = useNavigate();
+
+    const handlerNavigation = () => {
+        navigate("/savecontent");
+    }
 
     return (
         <div className="relative">
@@ -15,7 +21,12 @@ const Menu = ({ icon }) => {
                 <img
                     src={icon}
                     alt="menu"
-                    className="w-8 h-8"
+                    className="
+                        w-7 
+                        h-7
+                        md:w-8 
+                        md:h-8
+                    "
                 />
             </button>
 
@@ -44,7 +55,9 @@ const Menu = ({ icon }) => {
                                 w-full
                                 text-[#3D556B]
                                 text-lg
+                                cursor-pointer
                             "
+                            onClick={handlerNavigation}
                         >
                             ✨
 

@@ -1,16 +1,19 @@
 import Button from "../components/button";
 import Layout from "../components/layout"
 import Modal from "../components/modal";
+import Menu from "../components/menu";
+import toast from "react-hot-toast";
 import { getIcon } from "../utils/dictionaries";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getClaimData } from "../helpers/storage.service";
 import { saveContent } from "../services/content.service";
 
 const StreakPage = ({ theme }) => {
+    const [saved, setSaved] = useState(false);
     const content = getClaimData();
 
     const handleShare = async () => {
-        const text = `${content}\n\n#SleepWell`
+        const text = `${content.content.text}\n\n#SleepWell`
 
         if (navigator.share) {
             try {
@@ -26,18 +29,49 @@ const StreakPage = ({ theme }) => {
     };
 
     const handlerSaveContent = async () => {
-        try{
+        try {
             const savecontent = await saveContent();
-            if(savecontent) {
+            if (savecontent) {
                 console.log("Contenido guardado correctamente")
+                toast.success(
+                    "Contenido guardado correctamente"
+                );
+
+                setSaved(true);
+                localStorage.setItem(
+                    `saved_content`,
+                    content.content.id
+                );
+            } else {
+                toast.error(
+                    "Ocurrio un error al tratar de guardar guardar contenido"
+                );
             }
-        }catch(error){
+        } catch (error) {
             console.error(error);
         }
     }
 
+    useEffect(() => {
+        const contentSaved = localStorage.getItem("saved_content");
+
+        if (contentSaved !=
+            String(content.content.id)) {
+            setSaved(false);
+        } else {
+            setSaved(true);
+        }
+    }, [])
+
     return (
         <Layout theme={theme}>
+            <div className="
+                    flex
+                    justify-end
+                    p-2.5
+                ">
+                <Menu icon={theme.menuTheme} />
+            </div>
             <div className={`
                     p-5
                     h-134
@@ -114,8 +148,8 @@ const StreakPage = ({ theme }) => {
                         <div className="">
                             <Button
                                 onClick={handlerSaveContent}
-                                icon={"guardar"}
-                                text={"Save"}
+                                icon={saved ? "guardado" : "guardar"}
+                                text={saved ? "Saved" : "Save"}
                                 bgColor={"#EEEBE4"}
                             />
                         </div>
@@ -127,7 +161,6 @@ const StreakPage = ({ theme }) => {
                                 bgColor={"#EEEBE4"}
                             />
                         </div>
-
                     </div>
                 </div>
                 <div className=" 

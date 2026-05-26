@@ -2,6 +2,7 @@ import Button from "../components/button";
 import Layout from "../components/layout"
 import RitualCard from "../components/ritualCard";
 import Menu from "../components/menu";
+import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 import { dayliClaim } from "../services/claim.service";
 import { useNavigate } from "react-router-dom";
@@ -32,10 +33,20 @@ const HomePage = ({ theme }) => {
                 if (claim) {
                     console.log("Reclamo hecho con exito");
                     navigate("/streak", { replace: true });
+                    toast.success(
+                        "Racha actualizada"
+                    );
+                } else {
+                    toast.error(
+                        "Courrio un error al tratar actualizar tu racha"
+                    );
                 }
             }
         } catch (error) {
             console.error(error)
+            toast.error(
+                "Internal server error"
+            );
         }
     }
 
@@ -44,7 +55,7 @@ const HomePage = ({ theme }) => {
             navigate("/streak")
         }
 
-        /*if (!userData){
+       /* if (!userData) {
             navigate("/welcome")
         }*/
     }, [])
@@ -54,7 +65,7 @@ const HomePage = ({ theme }) => {
             <div className="
                     flex
                     justify-end
-                    py-1.5
+                    p-2.5
                 ">
                 <Menu icon={theme.menuTheme} />
             </div>

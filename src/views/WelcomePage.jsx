@@ -1,6 +1,7 @@
 import Button from "../components/button";
 import Layout from "../components/layout"
 import RitualCard from "../components/ritualCard";
+import toast from "react-hot-toast";
 import { registerUser } from "../services/auth.service";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
@@ -19,6 +20,9 @@ const WelcomePage = ({ theme }) => {
             }
         } catch (error) {
             console.error(error);
+            toast.error(
+                "Internal Server error"
+            )
         }
     }
 
@@ -83,6 +87,7 @@ const WelcomePage = ({ theme }) => {
                     <Button
                         text={"Click to get started!"}
                         onClick={handleRegister}
+                        //route={"/home"}
                         bgColor={"#8890B5"}
                         textColor={"#ffffff"}
                     />

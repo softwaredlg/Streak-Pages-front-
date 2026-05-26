@@ -13,8 +13,8 @@ const Button = ({
     const iconSrc = getIcon(icon);
 
     const commonClasses = `
-        h-9
-        w-44
+        h-12
+        w-50
         sm:h-10
         sm:w-44
         md:text-xl

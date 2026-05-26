@@ -12,9 +12,9 @@ const Header = ({ theme }) => {
                     alt="Header"
                     className="
                             w-full
-                            h-fit
+                            h-auto
                             md:h-fit
-                            lg:h-fit
+                            lg:w-full
                             "
                     id="imgHeader"
                 />

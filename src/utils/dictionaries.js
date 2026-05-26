@@ -10,6 +10,7 @@ import copiarIcon from '../assets/copia.png'
 import cerrarIcon from '../assets/cerrar.png'
 import menuNightIcon from '../assets/menuNight.png'
 import menuDayIcon from '../assets/menuDay.png'
+import guardadoIcon from '../assets/guardado.png'
 
 export const getIcon = key => {
     const icons = {
@@ -24,7 +25,8 @@ export const getIcon = key => {
         copiar: copiarIcon,
         cerrar: cerrarIcon,
         menuNight: menuNightIcon,
-        menuDay: menuDayIcon
+        menuDay: menuDayIcon,
+        guardado: guardadoIcon
     };
     return icons[key] || null
 }
