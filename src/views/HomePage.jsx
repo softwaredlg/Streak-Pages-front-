@@ -55,9 +55,9 @@ const HomePage = ({ theme }) => {
             navigate("/streak")
         }
 
-       /* if (!userData) {
-            navigate("/welcome")
-        }*/
+        if (!userData) {
+            navigate("/")
+        }
     }, [])
 
     return (

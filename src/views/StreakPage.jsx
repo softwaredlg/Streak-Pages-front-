@@ -7,10 +7,22 @@ import { getIcon } from "../utils/dictionaries";
 import { useEffect, useState } from "react";
 import { getClaimData } from "../helpers/storage.service";
 import { saveContent } from "../services/content.service";
+import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const StreakPage = ({ theme }) => {
     const [saved, setSaved] = useState(false);
     const content = getClaimData();
+    const navigate = useNavigate();
+
+    if (!content) {
+        return (
+            <Navigate
+                to={"/home"}
+                replace
+            />
+        );
+    }
 
     const handleShare = async () => {
         const text = `${content.content.text}\n\n#SleepWell`
@@ -61,6 +73,7 @@ const StreakPage = ({ theme }) => {
         } else {
             setSaved(true);
         }
+
     }, [])
 
     return (

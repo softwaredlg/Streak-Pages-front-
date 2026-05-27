@@ -14,7 +14,7 @@ const Button = ({
 
     const commonClasses = `
         h-12
-        w-50
+        w-45
         sm:h-10
         sm:w-44
         md:text-xl

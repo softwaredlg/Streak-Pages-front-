@@ -3,11 +3,14 @@ import Layout from "../components/layout"
 import { useEffect } from "react";
 import { viewSaveContent } from "../services/content.service";
 import { useState } from "react";
+import { getIcon } from "../utils/dictionaries";
+import { useNavigate } from "react-router-dom";
 
 
 const SaveContent = ({ theme }) => {
     const responsive = `bg-red-500 sm:bg-blue-300 md:bg-blue-500 lg:bg-green-500 xl:bg-green-300 2xl:bg-green-100`
     const [saveContent, setSaveContent] = useState([]);
+    const navigate = useNavigate();
 
     const handlerViewContent = async () => {
         try {
@@ -42,6 +45,21 @@ const SaveContent = ({ theme }) => {
     return (
 
         <Layout theme={theme}>
+            <div className="
+                    pl-3 
+                    pt-3
+                "
+            >
+                <button className="
+                            rounded-full 
+                            shadow-lg 
+                            p-2
+                        "
+                    onClick={() => navigate(-1)}
+                >
+                    <img src={getIcon("regresar")} alt="back" className="w-8 h-8" />
+                </button>
+            </div>
             <div className={`
                     gap-x-5            
                     p-5

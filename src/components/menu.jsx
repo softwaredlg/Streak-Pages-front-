@@ -11,12 +11,12 @@ const Menu = ({ icon }) => {
     }
 
     return (
-        <div className="relative bg-white p-2.5 rounded-2xl">
+        <div className="relative bg-white p-2.5 rounded-2xl shadow-lg">
 
             {/* Botón menu */}
             <button
                 onClick={() => setOpen(!open)}
-                className="cursor-pointer"
+                className="cursor-pointer flex justify-center"
             >
                 <img
                     src={icon}
@@ -62,7 +62,7 @@ const Menu = ({ icon }) => {
                             ✨
 
                             <span>
-                                Ver mis frases y tips
+                                See my quotes and tips
                             </span>
 
                         </button>

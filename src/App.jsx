@@ -29,8 +29,8 @@ function App() {
   return (
     <>
       <Routes>
+        <Route path='/' element={<WelcomePage theme={currentTheme} />} />
         <Route path='/home' element={<HomePage theme={currentTheme} />} />
-        <Route path='/welcome' element={<WelcomePage theme={currentTheme} />} />
         <Route path='/streak' element={<StreakPage theme={currentTheme} />} />
         <Route path='/savecontent' element={<SaveContent theme={currentTheme} />} />
       </Routes>
