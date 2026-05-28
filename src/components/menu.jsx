@@ -11,65 +11,104 @@ const Menu = ({ icon }) => {
     }
 
     return (
-        <div className="relative bg-white p-2.5 rounded-2xl shadow-lg">
+        <div className="
+                relative
+                bg-white
+                p-2.5
+                rounded-2xl
+                shadow-lg
+            "
+        >
 
             {/* Botón menu */}
             <button
                 onClick={() => setOpen(!open)}
-                className="cursor-pointer flex justify-center"
+                className="
+                    cursor-pointer
+                    flex
+                    justify-center
+
+                    transition-all
+                    duration-300
+                    ease-out
+
+                    hover:scale-110
+                    active:scale-95
+                "
             >
                 <img
                     src={icon}
                     alt="menu"
-                    className="
-                        w-7 
+                    className={`
+                        w-7
                         h-7
-                        md:w-8 
+                        md:w-8
                         md:h-8
-                    "
+
+                        transition-transform
+                        duration-300
+
+                        ${open ? "rotate-90" : "rotate-0"}
+                    `}
                 />
             </button>
 
             {/* Dropdown */}
-            {
-                open && (
-                    <div
-                        className="
-                            absolute
-                            right-0
-                            mt-3
-                            w-64
-                            bg-[#F5F5F5]
-                            rounded-3xl
-                            shadow-lg
-                            p-4
-                            z-50
-                        "
-                    >
+            <div
+                className={`
+                    absolute
+                    right-0
+                    mt-3
+                    w-64
 
-                        <button
-                            className="
-                                flex
-                                items-center
-                                gap-3
-                                w-full
-                                text-[#3D556B]
-                                text-lg
-                                cursor-pointer
-                            "
-                            onClick={handlerNavigation}
-                        >
-                            ✨
+                    backdrop-blur-md
+                    bg-[#F5F5F5]/90
 
-                            <span>
-                                See my quotes and tips
-                            </span>
+                    rounded-3xl
+                    shadow-2xl
+                    p-4
+                    z-50
 
-                        </button>
+                    transition-all
+                    duration-300
+                    ease-out
 
-                    </div>
-                )
-            }
+                    ${
+                        open
+                            ? "opacity-100 translate-y-0 scale-100"
+                            : "opacity-0 -translate-y-2 scale-95 pointer-events-none"
+                    }
+                `}
+            >
+
+                <button
+                    className="
+                        flex
+                        items-center
+                        gap-3
+                        w-full
+                        text-[#3D556B]
+                        text-lg
+                        cursor-pointer
+
+                        transition-all
+                        duration-200
+
+                        hover:translate-x-1
+                        active:scale-95
+                        hover:opacity-80
+                    "
+                    onClick={handlerNavigation}
+                >
+                    ✨
+
+                    <span>
+                        See my quotes and tips
+                    </span>
+
+                </button>
+
+            </div>
 
         </div>
     );

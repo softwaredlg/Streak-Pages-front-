@@ -1,45 +1,100 @@
-
+import { getIcon } from "../utils/dictionaries";
 
 const Header = ({ theme }) => {
+    const currentHour = new Date().getHours();
     return (
-        <div className="w-full overflow-hidden"
+        <div className="
+                w-full 
+                overflow-hidden
+                "
             id="headerContainer"
         >
-            <header className="relative w-full"
+            <header className="
+                        relative 
+                        w-full"
                 id="header"
             >
-                <img src={theme.bgImg}
-                    alt="Header"
+                {/* Mobile */}
+                <img
+                    src={theme.bgImgMobile}
+                    alt="Header Mobile"
                     className="
-                            w-full
-                            h-auto
-                            md:h-fit
-                            lg:w-full
-                            "
-                    id="imgHeader"
+                        block
+                        md:hidden
+                        w-full
+                        h-auto
+                    "
+                />
+                {/* Desktop */}
+                <img
+                    src={theme.bgImg}
+                    alt="Header Desktop"
+                    className="
+                        hidden
+                        md:block
+                        w-full
+                        h-auto
+                    "
                 />
                 <div className="
                             absolute 
                             inset-0 
                             flex 
-                            items-center
-                            "
+                            flex-col
+                            justify-start
+                            sm:justify-center
+                        "
                     id="hedaerContentContainer">
                     <div className="
-                            pt-1.5
-                            pl-2
-                            md:pt-5
+                            pl-4
+                            pt-4
+                            md:mt-2.5
                             md:pl-4
                             lg:pl-7
                             xl:pl-8
                             2xl:pl-9
-                            "
+                        "
                         id="headerTextContainer"
                     >
+                        <div className="
+                                flex 
+                                flex-row 
+                                items-center
+                                gap-1 
+                                sm:gap-2 
+                                w-fit
+                            "
+                        >
+                            <img
+                                src={theme.iconEvening}
+                                alt="sun"
+                                className="
+                                    w-5
+                                    h-5
+                                    sm:w-10 
+                                    sm:h-10
+                                "
+                            />
+                            <p className={`
+                                ${theme.headerFontSubTitle}
+                                text-xs
+                                sm:text-lg
+                                md:text-xl
+                                lg:text-2xl
+                                xl:text-3xl
+                                `}
+                            >
+                                {
+                                    currentHour >= 18 || currentHour < 6
+                                        ? "Good night"
+                                        : "Good morning"
+                                }
+                            </p>
+                        </div>
                         <p className={`
                                 font-serif
                                 ${theme.headerFontColorTitle}
-                                text-lg
+                                text-2xl
                                 sm:text-2xl
                                 md:text-5xl
                                 lg:text-6xl
@@ -61,7 +116,7 @@ const Header = ({ theme }) => {
                             2xl:text-4xl
                         `}
                         >
-                            Every detail is designed to turn your stay<br />
+                            Every detail is designed to turn your <br /> stay
                             into a premium experience.
                         </p>
                     </div>

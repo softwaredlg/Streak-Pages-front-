@@ -2,11 +2,15 @@ import { getIcon } from "./dictionaries"
 
 export const themes = {
     day: {
-        bgImg: "public/FondoDia.jpeg",
+        bgImg: "public/FondoDiaDesktop.jpeg",
+        iconEvening : getIcon("sol"),
+        bgImgMobile: "public/FondoDiaMovil.jpeg",
         headerFontColorTitle: "text-[#5C4A32]",
         headerFontSubTitle: "text-[#6B6058]" ,
         menuTheme: getIcon("menuDay"),
         contentFontColorTitle: "text-[#2C4A5E]",
+        iconBack: getIcon("regresar"),
+        bgBtnBack : "bg-[#ffffff]",
         contentFontColorSubTitle: "text-[#6B6058]",
         ritualCardFontColorText: "text-[#6B6058]",
         contentFontColorSubText: "text-[#6B6058]",
@@ -17,12 +21,16 @@ export const themes = {
         footerFontColorSubTitle: "text-[#A8A49E]"
     },
     night: {
-        bgImg: "public/FondoNoche.jpeg",
+        bgImg: "public/FondoNocheDesktop.jpeg",
+        iconEvening : getIcon("luna"),
+        bgImgMobile: "public/FondoNocheMovil.jpeg",
         headerFontColorTitle: "text-[#ffffff]",
         headerFontSubTitle: "text-[#a2daf6]",
         bgContent: "bg-[#0b121d]",
         menuTheme: getIcon("menuNight"),
         contentFontColorTitle: "text-[#a2daf6]",
+        iconBack: getIcon("regresarNoche"),
+        bgBtnBack : "bg-[#ffffff]",
         contentFontColorSubTitle: "text-[#ffffff]",
         contentFontColor: "text-[#ffffff]",
         contentFontColorSubText: "text-[#a2daf6]",

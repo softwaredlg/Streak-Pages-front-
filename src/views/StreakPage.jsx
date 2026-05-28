@@ -9,6 +9,7 @@ import { getClaimData } from "../helpers/storage.service";
 import { saveContent } from "../services/content.service";
 import { useNavigate } from "react-router-dom";
 import { Navigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const StreakPage = ({ theme }) => {
     const [saved, setSaved] = useState(false);
@@ -85,7 +86,27 @@ const StreakPage = ({ theme }) => {
                 ">
                 <Menu icon={theme.menuTheme} />
             </div>
-            <div className={`
+            <motion.div
+                initial={{
+                    opacity: 0,
+                    y: 20
+                }}
+
+                animate={{
+                    opacity: 1,
+                    y: 0
+                }}
+
+                exit={{
+                    opacity: 0,
+                    y: -20
+                }}
+
+                transition={{
+                    duration: 0.4
+                }} 
+            
+            className={`
                     p-5
                     h-134
                     flex
@@ -219,7 +240,7 @@ const StreakPage = ({ theme }) => {
                     >Every night counts. Keep creating nights of <br />
                         comfort and mornings full of energy.</p>
                 </div>
-            </div>
+            </motion.div>
         </Layout >
     );
 };

@@ -5,6 +5,7 @@ import { viewSaveContent } from "../services/content.service";
 import { useState } from "react";
 import { getIcon } from "../utils/dictionaries";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 
 const SaveContent = ({ theme }) => {
@@ -50,17 +51,41 @@ const SaveContent = ({ theme }) => {
                     pt-3
                 "
             >
-                <button className="
+                <button className={`
+                            ${theme.bgBtnBack}
                             rounded-full 
                             shadow-lg 
                             p-2
-                        "
+                            cursor-pointer
+                            `}
+
                     onClick={() => navigate(-1)}
                 >
-                    <img src={getIcon("regresar")} alt="back" className="w-8 h-8" />
+                    <img src={theme.iconBack} alt="back" className="w-8 h-8" />
                 </button>
             </div>
-            <div className={`
+            <motion.div
+                initial={{
+                    opacity: 0,
+                    y: 20
+                }}
+
+                animate={{
+                    opacity: 1,
+                    y: 0
+                }}
+
+                exit={{
+                    opacity: 0,
+                    y: -20
+                }}
+
+                transition={{
+                    duration: 0.4
+                }}
+
+
+                className={`
                     gap-x-5            
                     p-5
                     h-134
@@ -147,7 +172,7 @@ const SaveContent = ({ theme }) => {
                             ))
                     }
                 </div>
-            </div>
+            </motion.div>
 
         </Layout>
     );

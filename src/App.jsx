@@ -6,16 +6,18 @@ import { useEffect, useState } from 'react'
 import { themes } from './utils/themes'
 import { Routes, Route } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
+import { AnimatePresence } from 'framer-motion'
+import { useLocation } from 'react-router-dom'
 
 import './styles/App.css'
 
 function App() {
   const [themeMode, setThemeMode] = useState("day");
+  const location = useLocation();
 
   useEffect(() => {
 
     const currentHour = new Date().getHours();
-    console.log("horario " + currentHour);
 
     if (currentHour >= 18 || currentHour < 6) {
       setThemeMode("night");
@@ -28,19 +30,24 @@ function App() {
 
   return (
     <>
-      <Routes>
-        <Route path='/' element={<WelcomePage theme={currentTheme} />} />
-        <Route path='/home' element={<HomePage theme={currentTheme} />} />
-        <Route path='/streak' element={<StreakPage theme={currentTheme} />} />
-        <Route path='/savecontent' element={<SaveContent theme={currentTheme} />} />
-      </Routes>
+      <AnimatePresence mode='wait'>
+        <Routes
+          location={location}
+          key={location.pathname}
+        >
+          <Route path='/' element={<WelcomePage theme={currentTheme} />} />
+          <Route path='/home' element={<HomePage theme={currentTheme} />} />
+          <Route path='/streak' element={<StreakPage theme={currentTheme} />} />
+          <Route path='/savecontent' element={<SaveContent theme={currentTheme} />} />
+        </Routes>
 
-      <Toaster
+        <Toaster
           position='bottom-center'
           toastOptions={{
-             duration: 2000,
+            duration: 2000,
           }}
-      />
+        />
+      </AnimatePresence>
     </>
   )
 }

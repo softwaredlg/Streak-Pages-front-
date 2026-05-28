@@ -11,6 +11,10 @@ import cerrarIcon from '../assets/cerrar.png'
 import menuNightIcon from '../assets/menuNight.png'
 import menuDayIcon from '../assets/menuDay.png'
 import guardadoIcon from '../assets/guardado.png'
+import solIcon from '../assets/sol.png'
+import lunaIcon from '../assets/luna.png'
+import regresarIcon from '../assets/regresar.png'
+import regresarNocheIcon from '../assets/regresarNoche.png'
 
 export const getIcon = key => {
     const icons = {
@@ -26,7 +30,11 @@ export const getIcon = key => {
         cerrar: cerrarIcon,
         menuNight: menuNightIcon,
         menuDay: menuDayIcon,
-        guardado: guardadoIcon
+        guardado: guardadoIcon,
+        sol: solIcon,
+        luna: lunaIcon,
+        regresa: regresaIcon,
+        regresarNoche: regresarNocheIcon
     };
     return icons[key] || null
 }

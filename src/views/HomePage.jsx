@@ -8,6 +8,7 @@ import { dayliClaim } from "../services/claim.service";
 import { useNavigate } from "react-router-dom";
 import { getUserData } from "../helpers/storage.service";
 import { hasClaimeToday } from "../utils/claim";
+import { motion } from "framer-motion";
 
 const HomePage = ({ theme }) => {
     const [openMenu, setOpenMenu] = useState(false);
@@ -70,7 +71,27 @@ const HomePage = ({ theme }) => {
                 ">
                 <Menu icon={theme.menuTheme} />
             </div>
-            <div className={`    
+            <motion.div
+                initial={{
+                    opacity: 0,
+                    y: 20
+                }}
+
+                animate={{
+                    opacity: 1,
+                    y: 0
+                }}
+
+                exit={{
+                    opacity: 0,
+                    y: -20
+                }}
+
+                transition={{
+                    duration: 0.4
+                }}
+
+                className={`
                     p-2
                     md:items-center
                     md:max-w-full
@@ -82,7 +103,7 @@ const HomePage = ({ theme }) => {
                     lg:p-6
                     xl:p-8
                     2xl:p-10
-            `}
+                `}
                 id="contentContainer"
             >
 
@@ -174,7 +195,7 @@ const HomePage = ({ theme }) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </Layout>
     );
 };
