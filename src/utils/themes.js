@@ -2,9 +2,9 @@ import { getIcon } from "./dictionaries"
 
 export const themes = {
     day: {
-        bgImg: "public/FondoDiaDesktop.jpeg",
+        bgImg: "/FondoDiaDesktop.jpeg",
         iconEvening : getIcon("sol"),
-        bgImgMobile: "public/FondoDiaMovil.jpeg",
+        bgImgMobile: "/FondoDiaMovil.jpeg",
         headerFontColorTitle: "text-[#5C4A32]",
         headerFontSubTitle: "text-[#6B6058]" ,
         menuTheme: getIcon("menuDay"),
@@ -21,9 +21,9 @@ export const themes = {
         footerFontColorSubTitle: "text-[#A8A49E]"
     },
     night: {
-        bgImg: "public/FondoNocheDesktop.jpeg",
+        bgImg: "/FondoNocheDesktop.jpeg",
         iconEvening : getIcon("luna"),
-        bgImgMobile: "public/FondoNocheMovil.jpeg",
+        bgImgMobile: "/FondoNocheMovil.jpeg",
         headerFontColorTitle: "text-[#ffffff]",
         headerFontSubTitle: "text-[#a2daf6]",
         bgContent: "bg-[#0b121d]",
