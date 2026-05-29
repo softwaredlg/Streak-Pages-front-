@@ -8,6 +8,9 @@ import { Routes, Route } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 import { AnimatePresence } from 'framer-motion'
 import { useLocation } from 'react-router-dom'
+import { getUserData } from './helpers/storage.service'
+import { getClaimData } from './helpers/storage.service'
+import { Navigate } from 'react-router-dom'
 
 import './styles/App.css'
 
@@ -27,6 +30,8 @@ function App() {
   }, [])
 
   const currentTheme = themes[themeMode];
+  const userData = getUserData();
+  const claimData = getClaimData();
 
   return (
     <>
@@ -35,12 +40,42 @@ function App() {
           location={location}
           key={location.pathname}
         >
-          <Route path='/' element={<WelcomePage theme={currentTheme} />} />
-          <Route path='/home' element={<HomePage theme={currentTheme} />} />
-          <Route path='/streak' element={<StreakPage theme={currentTheme} />} />
-          <Route path='/savecontent' element={<SaveContent theme={currentTheme} />} />
-        </Routes>
+          <Route
+            path='/'
+            element={
+              userData
+                ? <Navigate to="/home" replace />
+                : <WelcomePage theme={currentTheme} />
+            }
+          />
 
+          <Route
+            path='/home'
+            element={
+              userData
+                ? <HomePage theme={currentTheme} />
+                : <Navigate to="/" replace />
+            }
+          />
+
+          <Route
+            path='/streak'
+            element={
+              claimData
+                ? <StreakPage theme={currentTheme} />
+                : <Navigate to="/home" replace />
+            }
+          />
+
+          <Route
+            path='/savecontent'
+            element={
+              userData
+                ? <SaveContent theme={currentTheme} />
+                : <Navigate to="/" replace />
+            }
+          />
+        </Routes>
         <Toaster
           position='bottom-center'
           toastOptions={{
