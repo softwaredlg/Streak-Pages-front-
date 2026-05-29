@@ -38,7 +38,7 @@ const StreakPage = ({ theme }) => {
     }
 
     const handleShare = async () => {
-        const text = `${content.content.text}\n\n#SleepWell`
+        const text = `${content.content.text}\n\n Discover your own quote or tip!\n https://experience.drjoohn.com/`
 
         if (navigator.share) {
             try {
@@ -155,7 +155,25 @@ const StreakPage = ({ theme }) => {
                             "
                         id="streakContent"
                     >
-                        <p className={`
+                        <motion.p
+                            initial={{
+                                opacity: 0,
+                                y: 40,
+                                scale: 0.9
+                            }}
+
+                            animate={{
+                                opacity: 1,
+                                y: 0,
+                                scale: 1
+                            }}
+
+                            transition={{
+                                duration: 0.6,
+                                ease: "easeOut"
+                            }}
+
+                            className={`
                                 ${theme.contentFontColor}
                                 font-serif
                                 text-xl
@@ -164,10 +182,11 @@ const StreakPage = ({ theme }) => {
                                 xl:text-5xl
                             ` }
                             id="content"
-                        >{content.content.text}</p>
+                        >{`"${content.content.text}"`}</motion.p>
                         <p className={`
                                 ${theme.contentFontColorSubText}
                                 mt-8
+                                text-sm
                                 lg:mt-4
                                 xl:mt-5
                                 md:text-xl
