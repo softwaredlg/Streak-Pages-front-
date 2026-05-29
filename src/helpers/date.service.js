@@ -9,8 +9,10 @@ export const getTodayDate = () => {
     return new Intl.DateTimeFormat(
         "en-CA",
         {
-            timeZone:
-                userData?.timeZone
+            timeZone: userData?.timeZone,
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit"
         }
     ).format(new Date());
 }

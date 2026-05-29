@@ -10,6 +10,7 @@ import { saveContent } from "../services/content.service";
 import { useNavigate } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { getTodayDate } from "../helpers/date.service";
 
 const StreakPage = ({ theme }) => {
     const [saved, setSaved] = useState(false);
@@ -17,6 +18,17 @@ const StreakPage = ({ theme }) => {
     const navigate = useNavigate();
 
     if (!content) {
+        return (
+            <Navigate
+                to={"/home"}
+                replace
+            />
+        );
+    }
+
+    const today = getTodayDate();
+
+    if(today != content.lastClaim){
         return (
             <Navigate
                 to={"/home"}
@@ -47,7 +59,7 @@ const StreakPage = ({ theme }) => {
             if (savecontent) {
                 console.log("Contenido guardado correctamente")
                 toast.success(
-                    "Contenido guardado correctamente"
+                    "Content saved successfully"
                 );
 
                 setSaved(true);
@@ -57,7 +69,7 @@ const StreakPage = ({ theme }) => {
                 );
             } else {
                 toast.error(
-                    "Ocurrio un error al tratar de guardar guardar contenido"
+                    "An error occurred while trying to save the content"
                 );
             }
         } catch (error) {
@@ -74,7 +86,6 @@ const StreakPage = ({ theme }) => {
         } else {
             setSaved(true);
         }
-
     }, [])
 
     return (

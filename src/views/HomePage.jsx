@@ -35,11 +35,11 @@ const HomePage = ({ theme }) => {
                     console.log("Reclamo hecho con exito");
                     navigate("/streak", { replace: true });
                     toast.success(
-                        "Racha actualizada"
+                        "Streak update"
                     );
                 } else {
                     toast.error(
-                        "Courrio un error al tratar actualizar tu racha"
+                        "An error occurred while trying to update your streak"
                     );
                 }
             }
