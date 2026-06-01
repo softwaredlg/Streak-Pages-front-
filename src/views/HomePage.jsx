@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 import { dayliClaim } from "../services/claim.service";
 import { useNavigate } from "react-router-dom";
-import { getUserData } from "../helpers/storage.service";
+import { getUserData, setContentView } from "../helpers/storage.service";
 import { hasClaimeToday } from "../utils/claim";
 import { motion } from "framer-motion";
 
@@ -16,6 +16,10 @@ const HomePage = ({ theme }) => {
     const navigate = useNavigate();
 
     const userData = getUserData();
+
+    const currentHour = new Date().getHours();
+
+
 
     const handlerClaimContent = async (type) => {
         try {
@@ -27,13 +31,14 @@ const HomePage = ({ theme }) => {
             }
 
             if (userId) {
-                console.log(`Tipo de contenido elegido ${type}`);
 
-                const claim = await dayliClaim(type, userId);
+                const claim = await dayliClaim(userId);
 
                 if (claim) {
                     console.log("Reclamo hecho con exito");
-                    navigate("/streak", { replace: true });
+                    setContentView(type);
+                    console.log(`Tipo de contenido elegido ${type}`);
+                    navigate("/streak");
                     toast.success(
                         "Streak update"
                     );
@@ -52,10 +57,6 @@ const HomePage = ({ theme }) => {
     }
 
     useEffect(() => {
-        if (hasClaimeToday()) {
-            navigate("/streak")
-        }
-
         if (!userData) {
             navigate("/")
         }
@@ -157,7 +158,7 @@ const HomePage = ({ theme }) => {
                         <div className="flex justify-center" id="phraseButtonContainer">
                             <Button
                                 text={"Discover my quote"}
-                                onClick={() => handlerClaimContent("PHRASE")}//cambiar por onClick
+                                onClick={() => handlerClaimContent("phrase")}//cambiar por onClick
                                 bgColor={"#8890B5"}
                                 textColor={"#ffffff"}
                             />
@@ -179,7 +180,7 @@ const HomePage = ({ theme }) => {
                         <div className="flex justify-center" id="tipButtonContainer">
                             <Button
                                 text={"Discover my tip"}
-                                onClick={() => handlerClaimContent("TIP")}//cambiar por onClick
+                                onClick={() => handlerClaimContent("tip")}//cambiar por onClick
                                 bgColor={"#8890B5"}
                                 textColor={"#ffffff"}
                             />

@@ -1,7 +1,8 @@
 import { API_URL } from "../config/api";
 import { getTodayDate } from "../helpers/date.service";
+import { getUserData } from "../helpers/storage.service";
 
-export const dayliClaim = async (type, userId) => {
+export const dayliClaim = async (userId) => {
 
     const response = await fetch(
         `${API_URL}/claim/${userId}`,
@@ -9,23 +10,18 @@ export const dayliClaim = async (type, userId) => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                type
-            })
+            }
         }
     );
 
-    if(!response.ok){
+    if (!response.ok) {
         throw new Error("Error al intertar reclamar racha");
     }
 
     const data = await response.json();
 
-    const userData = 
-        localStorage.getItem("user_data");
+    const userData = getUserData();
 
-    
     const today = getTodayDate();
 
     localStorage.setItem(
@@ -33,7 +29,7 @@ export const dayliClaim = async (type, userId) => {
         JSON.stringify({
             streak: data.streak.current_streak,
             lastClaim: today,
-            content:data.content
+            content: data.content
         })
     );
 

@@ -1,14 +1,12 @@
 import { API_URL } from "../config/api";
-import { getUserData, getClaimData } from "../helpers/storage.service";
+import { getUserData } from "../helpers/storage.service";
 
-export const saveContent = async () => {
+export const saveContent = async (selectContent) => {
     const userData = getUserData();
-    const contentData = getClaimData();
-
 
     if (
         !userData?.id ||
-        !contentData?.content?.id
+        !selectContent?.id
     ) {
         throw new Error(
             "Faltan datos para guardar contenido"
@@ -24,7 +22,7 @@ export const saveContent = async () => {
             },
             body: JSON.stringify({
                 userId: userData?.id,
-                contentId: contentData?.content.id
+                contentId: selectContent?.id
             })
         }
     );

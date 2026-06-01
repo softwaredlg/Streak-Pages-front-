@@ -5,7 +5,7 @@ import Menu from "../components/menu";
 import toast from "react-hot-toast";
 import { getIcon } from "../utils/dictionaries";
 import { useEffect, useState } from "react";
-import { getClaimData } from "../helpers/storage.service";
+import { getClaimData, getContentView } from "../helpers/storage.service";
 import { saveContent } from "../services/content.service";
 import { useNavigate } from "react-router-dom";
 import { Navigate } from "react-router-dom";
@@ -14,8 +14,14 @@ import { getTodayDate } from "../helpers/date.service";
 
 const StreakPage = ({ theme }) => {
     const [saved, setSaved] = useState(false);
-    const content = getClaimData();
     const navigate = useNavigate();
+    const content = getClaimData();
+    const type = getContentView();
+
+    const selectContent = 
+        type === "phrase"
+            ? content.content.phrase
+            : content.content.tip
 
     if (!content) {
         return (
@@ -38,7 +44,7 @@ const StreakPage = ({ theme }) => {
     }
 
     const handleShare = async () => {
-        const text = `${content.content.text}\n\n Discover your own quote or tip!\n https://experience.drjoohn.com/`
+        const text = `${selectContent.text}\n\n Discover your own quote or tip!\n https://experience.drjoohn.com/`
 
         if (navigator.share) {
             try {
@@ -55,7 +61,7 @@ const StreakPage = ({ theme }) => {
 
     const handlerSaveContent = async () => {
         try {
-            const savecontent = await saveContent();
+            const savecontent = await saveContent(selectContent);
             if (savecontent) {
                 console.log("Contenido guardado correctamente")
                 toast.success(
@@ -64,8 +70,8 @@ const StreakPage = ({ theme }) => {
 
                 setSaved(true);
                 localStorage.setItem(
-                    `saved_content`,
-                    content.content.id
+                    `saved_${selectContent.type}`,
+                    selectContent.id
                 );
             } else {
                 toast.error(
@@ -78,10 +84,11 @@ const StreakPage = ({ theme }) => {
     }
 
     useEffect(() => {
-        const contentSaved = localStorage.getItem("saved_content");
+        const contentSaved = localStorage.getItem(`saved_${selectContent.type}`); 
+        
 
         if (contentSaved !=
-            String(content.content.id)) {
+            String(selectContent.id)) {
             setSaved(false);
         } else {
             setSaved(true);
@@ -182,7 +189,7 @@ const StreakPage = ({ theme }) => {
                                 xl:text-5xl
                             ` }
                             id="content"
-                        >{`"${content.content.text}"`}</motion.p>
+                        >{selectContent.text}</motion.p>
                         <p className={`
                                 ${theme.contentFontColorSubText}
                                 mt-8
