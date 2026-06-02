@@ -4,35 +4,43 @@ import RitualCard from "../components/ritualCard";
 import toast from "react-hot-toast";
 import { registerUser } from "../services/auth.service";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { getUserData } from "../helpers/storage.service";
 
 const WelcomePage = ({ theme }) => {
+    const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
 
+    const userData = getUserData();
+
     const handleRegister = async () => {
+
+        if (loading) return;
+
         try {
+
+            setLoading(true);
             const register = await registerUser();
 
             if (register) {
                 console.log("Registro completado correctamente");
-                navigate("/home",{replace: true});
+                navigate("/home", { replace: true });
             }
         } catch (error) {
             console.error(error);
             toast.error(
                 "Internal Server error"
             )
-        }
+
+            setLoading(false)
+        } 
     }
 
     useEffect(() => {
-        const userId =
-            localStorage.getItem("user_data");
-
-        if (userId) {
-            navigate("/home",{replace: true});
+        if (userData) {
+            navigate("/home", { replace: true });
         }
     }, [])
 
@@ -57,7 +65,7 @@ const WelcomePage = ({ theme }) => {
                 transition={{
                     duration: 0.4
                 }}
-            className={`
+                className={`
                               
                     p-2
                     items-center
@@ -105,11 +113,16 @@ const WelcomePage = ({ theme }) => {
                 </div>
                 <div className="mt">
                     <Button
-                        text={"Click to get started!"}
+                        text={
+                            loading
+                                ? "Loading..."
+                                : "Click to get started!"
+                        }
                         onClick={handleRegister}
                         //route={"/home"}
                         bgColor={"#8890B5"}
                         textColor={"#ffffff"}
+                        disabled={loading}
                     />
                 </div>
             </motion.div>

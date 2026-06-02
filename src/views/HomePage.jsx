@@ -9,21 +9,26 @@ import { useNavigate } from "react-router-dom";
 import { getUserData, setContentView } from "../helpers/storage.service";
 import { hasClaimeToday } from "../utils/claim";
 import { motion } from "framer-motion";
+import { useContext } from "react";
+import { ThemeContext } from "../contexts/themeContext";
 
 const HomePage = ({ theme }) => {
     const [openMenu, setOpenMenu] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
 
     const userData = getUserData();
 
     const currentHour = new Date().getHours();
-
+    const { themeMode } = useContext(ThemeContext);
 
 
     const handlerClaimContent = async (type) => {
-        try {
+        if (loading) return;
 
+        try {
+            setLoading(true);
             const userId = userData?.id;
 
             if (!userId) {
@@ -31,20 +36,17 @@ const HomePage = ({ theme }) => {
             }
 
             if (userId) {
-
+                
                 const claim = await dayliClaim(userId);
+                console.log("Reclamo hecho con exito");
 
-                if (claim) {
-                    console.log("Reclamo hecho con exito");
-                    setContentView(type);
-                    console.log(`Tipo de contenido elegido ${type}`);
-                    navigate("/streak");
+                setContentView(type);
+                navigate("/streak");
+
+                if (claim.message === "Actualizando racha" ||
+                    claim.message === "Racha iniciada") {
                     toast.success(
                         "Streak update"
-                    );
-                } else {
-                    toast.error(
-                        "An error occurred while trying to update your streak"
                     );
                 }
             }
@@ -53,6 +55,7 @@ const HomePage = ({ theme }) => {
             toast.error(
                 "Internal server error"
             );
+            setLoading(false)
         }
     }
 

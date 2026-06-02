@@ -7,7 +7,8 @@ const Button = ({
     onClick,
     bgColor,
     textColor,
-    icon
+    icon,
+    disabled
 }) => {
 
     const iconSrc = getIcon(icon);
@@ -85,6 +86,7 @@ const Button = ({
                 color: textColor
             }}
             className={commonClasses}
+            disabled={disabled}
         >
             {content}
         </button>

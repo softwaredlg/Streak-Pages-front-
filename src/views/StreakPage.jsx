@@ -11,17 +11,20 @@ import { useNavigate } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { getTodayDate } from "../helpers/date.service";
+import { selectedContent } from "../helpers/content.service";
 
 const StreakPage = ({ theme }) => {
     const [saved, setSaved] = useState(false);
+
     const navigate = useNavigate();
-    const content = getClaimData();
+
     const type = getContentView();
 
-    const selectContent = 
-        type === "phrase"
-            ? content.content.phrase
-            : content.content.tip
+    const content = getClaimData();
+
+    const selectContent = selectedContent(type);
+
+    const today = getTodayDate();
 
     if (!content) {
         return (
@@ -32,9 +35,7 @@ const StreakPage = ({ theme }) => {
         );
     }
 
-    const today = getTodayDate();
-
-    if(today != content.lastClaim){
+    if (today != content.lastClaim) {
         return (
             <Navigate
                 to={"/home"}
@@ -84,6 +85,7 @@ const StreakPage = ({ theme }) => {
     }
 
     useEffect(() => {
+        console.log(selectContent)
         const contentSaved = localStorage.getItem(`saved_${selectContent.type}`); 
         
 
@@ -122,9 +124,9 @@ const StreakPage = ({ theme }) => {
 
                 transition={{
                     duration: 0.4
-                }} 
-            
-            className={`
+                }}
+
+                className={`
                     p-5
                     h-134
                     flex

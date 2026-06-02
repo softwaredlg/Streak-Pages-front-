@@ -11,11 +11,14 @@ import { useLocation } from 'react-router-dom'
 import { getUserData } from './helpers/storage.service'
 import { getClaimData } from './helpers/storage.service'
 import { Navigate } from 'react-router-dom'
+import { useContext } from 'react'
+import { ThemeContext } from './contexts/themeContext'
 
 import './styles/App.css'
 
 function App() {
-  const [themeMode, setThemeMode] = useState("day");
+  const { themeMode, setThemeMode } = useContext(ThemeContext);
+
   const location = useLocation();
 
   useEffect(() => {
