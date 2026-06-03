@@ -4,6 +4,8 @@ import { getUserData } from "../helpers/storage.service";
 
 export const dayliClaim = async (userId) => {
 
+    console.log("hola")
+
     const response = await fetch(
         `${API_URL}/claim/${userId}`,
         {

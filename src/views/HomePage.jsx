@@ -11,6 +11,8 @@ import { hasClaimeToday } from "../utils/claim";
 import { motion } from "framer-motion";
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/themeContext";
+import { getClaimData } from "../helpers/storage.service";
+import { getTodayDate } from "../helpers/date.service";
 
 const HomePage = ({ theme }) => {
     const [openMenu, setOpenMenu] = useState(false);
@@ -25,37 +27,37 @@ const HomePage = ({ theme }) => {
 
 
     const handlerClaimContent = async (type) => {
+
         if (loading) return;
 
+        const claimData = getClaimData();
+        const today = getTodayDate();
+
+        if (
+            claimData &&
+            claimData.lastClaim === today
+        ) {
+            setContentView(type);
+            navigate("/streak");
+            return;
+        }
+
         try {
+
             setLoading(true);
-            const userId = userData?.id;
 
-            if (!userId) {
-                return
-            }
+            const claim =
+                await dayliClaim(userData.id);
 
-            if (userId) {
-                
-                const claim = await dayliClaim(userId);
-                console.log("Reclamo hecho con exito");
+            setContentView(type);
 
-                setContentView(type);
-                navigate("/streak");
+            navigate("/streak");
 
-                if (claim.message === "Actualizando racha" ||
-                    claim.message === "Racha iniciada") {
-                    toast.success(
-                        "Streak update"
-                    );
-                }
-            }
         } catch (error) {
-            console.error(error)
-            toast.error(
-                "Internal server error"
-            );
-            setLoading(false)
+
+            console.error(error);
+
+            setLoading(false);
         }
     }
 
