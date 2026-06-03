@@ -85,7 +85,6 @@ const StreakPage = ({ theme }) => {
     }
 
     useEffect(() => {
-        console.log(selectContent)
         const contentSaved = localStorage.getItem(`saved_${selectContent.type}`); 
         
 
