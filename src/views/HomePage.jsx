@@ -48,6 +48,18 @@ const HomePage = ({ theme }) => {
 
             const claim =
                 await dayliClaim(userData.id);
+            
+            if(claim.message == "Racha iniciada") {
+                toast.success(
+                    "Streak create!"
+                );
+            }
+
+            if(claim.message == "Actualizando racha") {
+                toast.success(
+                    "Streak update Good job!"
+                );
+            } 
 
             setContentView(type);
 

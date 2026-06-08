@@ -45,7 +45,7 @@ const StreakPage = ({ theme }) => {
     }
 
     const handleShare = async () => {
-        const text = `${selectContent.text}\n\n Discover your own quote or tip!\n https://experience.drjoohn.com/`
+        const text = `Hey look what I've got!\n\n${selectContent.text}\n\n Discover your own quote or tip!\n https://experience.drjoohn.com/`
 
         if (navigator.share) {
             try {
